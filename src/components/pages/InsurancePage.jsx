@@ -56,7 +56,7 @@ const InsurancePage = ({
 }) => {
   const [openFaq, setOpenFaq] = useState(null)
   const whatsappNumber = "5513997168191"
-  const whatsappMessage = `Olá! Gostaria de saber mais sobre ${title}.`
+  const whatsappMessage = `Olá! Gostaria de saber mais sobre seguros!`
 
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
@@ -339,7 +339,6 @@ const InsurancePage = ({
                   src={logoUrl} 
                   alt={`Logo Seguradora ${index + 1}`} 
                   className="max-w-full max-h-full object-contain" 
-                  onError={(e) => { e.target.style.display = 'none' }}
                 />
               </motion.div>
             ))}

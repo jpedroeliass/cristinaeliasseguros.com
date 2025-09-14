@@ -174,7 +174,7 @@ const HomePage = () => {
           >
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               O seu futuro e o da sua família estão{' '}
-              <span className="text-accent">realmente protegidos?</span>
+              <span className="text-accent">realmentee protegidos?</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200 mb-8 leading-relaxed">
               Nós transformamos incerteza em tranquilidade. Durma descansado sabendo que o que mais importa está seguro.
@@ -419,7 +419,7 @@ const HomePage = () => {
                   src={logoUrl} 
                   alt={`Logo Seguradora ${index + 1}`} 
                   className="max-w-full max-h-full object-contain" 
-                  onError={(e) => { e.target.style.display = 'none' }}
+                  
                 />
               </motion.div>
             ))}
