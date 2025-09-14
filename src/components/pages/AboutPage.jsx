@@ -66,7 +66,7 @@ const AboutPage = () => {
     'https://cdn.worldvectorlogo.com/logos/azul-seguros.svg',
     'https://logodownload.org/wp-content/uploads/2018/10/bradesco-seguros-logo-1-1.png',
     'https://i.imgur.com/pmDBRbT.png', // HDI
-    'https://i.imgur.com/dzFlINc.png', // Porto
+    'https://i.imgur.com/vfiSzTt.png', // Porto
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mapfre_logo.svg/2560px-Mapfre_logo.svg.png',
     'https://www.sompo.com.br/documents/10156/33130/logo-sompo-seguros.png/0f46c6f5-e55f-4d64-9694-8147d346b0d1?t=1506450616000',
     'https://logodownload.org/wp-content/uploads/2022/06/suhai-seguradora-logo.png',

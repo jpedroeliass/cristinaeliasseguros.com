@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
@@ -86,21 +87,22 @@ const HomePage = () => {
   ]
 
   const testimonials = [
-    { 
-      name: "Andrea Solano", 
-      text: "Excelente atendimento! Sempre pronto pra resolver qualquer dúvida, ou problema, nesse sábado onde tive uma urgência fui super bem atendida! Super recomendo!",
-      rating: 5
-    },
-    { 
-      name: "Walter S. Gomes", 
-      text: "Ótimo atendimento justamente quando mais precisamos no sinistro do veículo e na aquisição do novo com muita rapidez, eficiência e melhor custo benefício. Excelente!",
-      rating: 5
-    },
-    { 
-      name: "Renata Caprete", 
-      text: "Profissionais altamente qualificados, atendimento imediato, resolução dos problemas da melhor forma. Recomendo de olhos fechados!",
-      rating: 5
-    }
+    { name: "Claudia Ferreira", text: "Os melhores corretores do mundo. Eu, minha família e empresa somos clientes a mais de 6 anos e só tenho a agradecer. Trabalha com todas as empresas de seguro e tb plano de saúde. Excelente atendimento.", rating: 5 },
+    { name: "Jorge Avenida Construtora", text: "Irretogável, um atendimento exemplar, prestativo, rápido, um tipo de profissional que não se acha mais. Super indico. O nome da fera: Lelio.", rating: 5 },
+    { name: "Andrea Solano", text: "Excelente atendimento! Sempre pronto pra resolver qualquer dúvida, ou problema, nesse sábado onde tive uma urgência fui super bem atendida! Super recomendo!", rating: 5 },
+    { name: "Marcos Nascimento", text: "Sou cliente da Cristina Elias Corretora de Seguros há mais de 10 anos!!! Uma empresa familiar, onde vc é assistido pela Cristina (uma das pessoas que mais entende de Seguro de automóveis e residência que já conheci) e sempre procurando …", rating: 5 },
+    { name: "Renata Souto Vieira", text: "Eu, Renata Souto Vieira, venho por intermédio dessa postagem, elogiar a atuação do funcionário dessa Corretora, o Sr. Lélio Delfim Pinto, pelo seu esforço em me auxiliar na finalização de um sinistro. Sua ação junto à Seguradora Porto …", rating: 5 },
+    { name: "Walter Soares de Oliveira Gomes", text: "Ótimo atendimento justamente quando mais precisamos no sinistro do veículo e na aquisição do novo com muita rapidez, eficiência e melhor custo benefício excelente. Sr. Lelio cordial, prestativo e ágil, super recomendo.", rating: 5 },
+    { name: "Jose Ricardo Goncalves", text: "Gostaria de compartilhar minha experiência após sinistro sofrido, no qual fui atendido com extrema atenção tanto pela Cristina quanto o Lélio que me tranquilizaram quanto a ocorrência e me explicaram detalhadamente os passos a serem …", rating: 5 },
+    { name: "Gustavo Cardoso", text: "Faço todos os meus seguros com eles. São ótimos e nunca me deixaram na mão! Faço meus seguros de auto e residencial com eles!", rating: 5 },
+    { name: "Luiz Carlos Garcia Wanderley", text: "Excelente atendimento, com uma eficiência rápida, muito prestativos, tanto que necessitei de uma apólice num sábado e fui prontamente atendido com eficácia.", rating: 5 },
+    { name: "Cristina Assumpção", text: "Corretora excelente, nos dá muito suporte. Muito obrigada, estão de parabéns!!", rating: 5 },
+    { name: "Marcia Elias", text: "Estou nessa corretora há uns 4 anos, atendimento de primeira, corretores atenciosos e sempre à disposição para resolver qualquer problema. Top 💯, super indico. 😊", rating: 5 },
+    { name: "Renata Caprete", text: "Profissionais altamente qualificados, atendimento imediato, resolução dos problemas da melhor forma. Recomendo de olhos fechados!", rating: 5 },
+    { name: "andre loureiro", text: "Bom atendimento, elogiado pela rapidez e eficiência por quem eu a indiquei.", rating: 5 },
+    { name: "Sergio Araújo", text: "Profissionais super atenciosos e prestativos, recomendo.", rating: 5 },
+    { name: "Luciane A Guerra", text: "Pessoal super profissional...", rating: 5 },
+    { name: "gerson sena", text: "Confiança e profissional.", rating: 5 }
   ]
 
   const insurers = [
@@ -108,7 +110,7 @@ const HomePage = () => {
     'https://cdn.worldvectorlogo.com/logos/azul-seguros.svg',
     'https://logodownload.org/wp-content/uploads/2018/10/bradesco-seguros-logo-1-1.png',
     'https://i.imgur.com/pmDBRbT.png', // HDI
-    'https://i.imgur.com/dzFlINc.png', // Porto
+    'https://i.imgur.com/vfiSzTt.png', // Porto
     'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mapfre_logo.svg/2560px-Mapfre_logo.svg.png',
     'https://www.sompo.com.br/documents/10156/33130/logo-sompo-seguros.png/0f46c6f5-e55f-4d64-9694-8147d346b0d1?t=1506450616000',
     'https://logodownload.org/wp-content/uploads/2022/06/suhai-seguradora-logo.png',
@@ -262,7 +264,6 @@ const HomePage = () => {
           >
             {services.map((service) => (
               <motion.div key={service.title} variants={itemVariants}>
-                {/* FIX: relative para o Link absoluto cobrir todo o card */}
                 <Card className="card-hover group cursor-pointer h-full relative">
                   <CardContent className="p-8">
                     <div className={`w-16 h-16 ${service.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -300,39 +301,9 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {testimonials.map((testimonial) => (
-              <motion.div key={testimonial.name} variants={itemVariants}>
-                <Card className="h-full">
-                  <CardContent className="p-8">
-                    <Quote className="w-8 h-8 text-gray-300 mb-4" />
-                    <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-primary text-xl">
-                          {testimonial.name.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-bold text-gray-800">{testimonial.name}</p>
-                          <div className="flex space-x-1">
-                            {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="relative">
+            <CarouselTestimonials testimonials={testimonials} />
+          </div>
         </div>
       </section>
 
@@ -368,7 +339,6 @@ const HomePage = () => {
           >
             {portoProducts.map((product) => (
               <motion.div key={product.title} variants={itemVariants}>
-                {/* FIX: relative para o Link absoluto cobrir todo o card */}
                 <Card className="bg-white/95 text-gray-800 hover:bg-white transition-all duration-300 group cursor-pointer h-full shadow-lg relative">
                   <CardContent className="p-6">
                     <div className="text-4xl mb-4">{product.icon}</div>
@@ -419,7 +389,6 @@ const HomePage = () => {
                   src={logoUrl} 
                   alt={`Logo Seguradora ${index + 1}`} 
                   className="max-w-full max-h-full object-contain" 
-                  
                 />
               </motion.div>
             ))}
@@ -450,6 +419,72 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
+    </div>
+  )
+}
+
+// Carrossel funcional de depoimentos
+function CarouselTestimonials({ testimonials }) {
+  const testimonialsPerPage = 3
+  const [page, setPage] = useState(0)
+  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage)
+
+  const handlePrev = () => setPage((p) => Math.max(p - 1, 0))
+  const handleNext = () => setPage((p) => Math.min(p + 1, totalPages - 1))
+
+  const start = page * testimonialsPerPage
+  const current = testimonials.slice(start, start + testimonialsPerPage)
+
+  return (
+    <div className="relative">
+      {page > 0 && (
+        <button
+          onClick={handlePrev}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-gray-100"
+          aria-label="Anterior"
+        >
+          <ArrowRight className="w-6 h-6 rotate-180 text-primary" />
+        </button>
+      )}
+      {page < totalPages - 1 && (
+        <button
+          onClick={handleNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-gray-100"
+          aria-label="Próximo"
+        >
+          <ArrowRight className="w-6 h-6 text-primary" />
+        </button>
+      )}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        key={page}
+      >
+        {current.map((testimonial) => (
+          <Card key={testimonial.name} className="h-full">
+            <CardContent className="p-8">
+              <Quote className="w-8 h-8 text-gray-300 mb-4" />
+              <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-primary text-xl">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-800">{testimonial.name}</p>
+                    <div className="flex space-x-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </motion.div>
     </div>
   )
 }

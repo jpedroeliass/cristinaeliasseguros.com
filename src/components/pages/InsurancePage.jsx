@@ -45,14 +45,28 @@ const iconMap = {
   Droplets
 }
 
+const insurers = [
+  'https://i.imgur.com/mPGhpVM.png', // Allianz
+  'https://klauecorretora.com.br/wp-content/uploads/2018/11/somposeguros-1-e1551103238511.png',
+  'https://logodownload.org/wp-content/uploads/2018/10/bradesco-seguros-logo-1-1.png',
+  'https://i.imgur.com/pmDBRbT.png', // HDI
+  'https://i.imgur.com/vfiSzTt.png', // Porto
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mapfre_logo.svg/2560px-Mapfre_logo.svg.png',
+  'https://i.imgur.com/7zbp4bX.png', // Sompo corrigido
+  'https://logodownload.org/wp-content/uploads/2022/06/suhai-seguradora-logo.png',
+  'https://logodownload.org/wp-content/uploads/2017/10/sulamerica-logo-1.png',
+  'https://i.imgur.com/kDUuWS4.png', // Tokio Marine
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Zurich_Insurance_Group_logo.svg/1280px-Zurich_Insurance_Group_logo.svg.png'
+]
+
 const InsurancePage = ({ 
   title, 
   description, 
   heroImage, 
   iframeSrc, 
-  coverages, 
-  benefits, 
-  faqs 
+  coverages = [], 
+  benefits = [], 
+  faqs = [] 
 }) => {
   const [openFaq, setOpenFaq] = useState(null)
   const whatsappNumber = "5513997168191"
@@ -118,6 +132,7 @@ const InsurancePage = ({
       </section>
 
       {/* Formulário de Cotação */}
+      {iframeSrc && (
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
@@ -146,6 +161,7 @@ const InsurancePage = ({
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* CTA WhatsApp */}
       <section className="section-padding bg-gray-50">
@@ -175,6 +191,7 @@ const InsurancePage = ({
       </section>
 
       {/* Principais Coberturas */}
+      {coverages.length > 0 && (
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
@@ -218,6 +235,7 @@ const InsurancePage = ({
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* Por que Contratar + FAQ */}
       <section className="section-padding bg-gray-50">
@@ -322,14 +340,7 @@ const InsurancePage = ({
             viewport={{ once: true }}
             className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 items-center"
           >
-            {[
-              'https://i.imgur.com/mPGhpVM.png',
-              'https://cdn.worldvectorlogo.com/logos/azul-seguros.svg',
-              'https://logodownload.org/wp-content/uploads/2018/10/bradesco-seguros-logo-1-1.png',
-              'https://i.imgur.com/pmDBRbT.png',
-              'https://i.imgur.com/dzFlINc.png',
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Mapfre_logo.svg/2560px-Mapfre_logo.svg.png'
-            ].map((logoUrl, index) => (
+            {insurers.map((logoUrl, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
@@ -338,7 +349,11 @@ const InsurancePage = ({
                 <img 
                   src={logoUrl} 
                   alt={`Logo Seguradora ${index + 1}`} 
-                  className="max-w-full max-h-full object-contain" 
+                  className={
+                    index === 6
+                      ? "max-w-[140px] max-h-16 object-contain" // Sompo maior
+                      : "max-w-full max-h-full object-contain"
+                  }
                 />
               </motion.div>
             ))}
@@ -387,5 +402,4 @@ const InsurancePage = ({
     </div>
   )
 }
-
 export default InsurancePage
