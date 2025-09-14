@@ -174,7 +174,7 @@ const HomePage = () => {
           >
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               O seu futuro e o da sua família estão{' '}
-              <span className="text-accent">realmentee protegidos?</span>
+              <span className="text-accent">realmente protegidos?</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-200 mb-8 leading-relaxed">
               Nós transformamos incerteza em tranquilidade. Durma descansado sabendo que o que mais importa está seguro.
