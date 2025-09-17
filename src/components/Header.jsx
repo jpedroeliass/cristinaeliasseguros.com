@@ -1,3 +1,4 @@
+// ...existing code...
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -76,18 +77,16 @@ const Header = () => {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
-      {/* Top bar Desktop */}
-      <div className="hidden lg:block bg-primary text-white py-2">
+      {/* Top bar Desktop - agora usando cor secundaria */}
+      <div className="hidden lg:block bg-secondary text-white py-2">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
-              {/* Telefone fixo com ícone de telefone */}
               <a href="tel:+551332212001" className="flex items-center space-x-2 hover:opacity-90">
                 <Phone className="w-4 h-4" />
                 <span>(13) 3221-2001</span>
               </a>
 
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/5513997168191"
                 target="_blank"
@@ -98,7 +97,6 @@ const Header = () => {
                 <span>(13) 99716-8191</span>
               </a>
 
-              {/* E-mails */}
               <a href="mailto:cristina@cristinaeliasseguros.com.br" className="flex items-center space-x-2 hover:opacity-90">
                 <Mail className="w-4 h-4" />
                 <span>cristina@cristinaeliasseguros.com.br</span>
@@ -114,8 +112,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Top bar Mobile (novo) */}
-      <div className="lg:hidden bg-primary text-white">
+      {/* Top bar Mobile - agora usando cor secundaria */}
+      <div className="lg:hidden bg-secondary text-white">
         <div className="container-custom py-2">
           <div className="flex items-center text-xs overflow-x-auto no-scrollbar gap-4">
             <a href="tel:+551332212001" className="flex items-center gap-1 shrink-0">
@@ -137,14 +135,15 @@ const Header = () => {
       </div>
 
       {/* Navegação principal */}
-      <nav className="container-custom py-4">
-        <div className="flex justify-between items-center">
+      <nav className="container-custom py-4 min-h-[90px] flex items-center">
+        <div className="flex justify-between items-center w-full">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img
-              src="https://i.imgur.com/HvuS7MA.png"
+              src="/logocerta.png"
               alt="Cristina Elias Corretora de Seguros"
-              className="h-12 md:h-14 w-auto"
+              className="max-h-[80px] w-auto"
+              style={{ height: 'auto' }}
             />
           </Link>
 
@@ -196,7 +195,6 @@ const Header = () => {
               transition={{ duration: 0.3 }}
               className="lg:hidden mt-4 pb-4 border-t border-gray-200"
             >
-              {/* Contatos no mobile dentro do menu (redundância útil) */}
               <div className="flex flex-col gap-2 text-sm mb-4">
                 <a href="tel:+551332212001" className="flex items-center gap-2 text-gray-700">
                   <Phone className="w-4 h-4" />
@@ -264,3 +262,4 @@ const Header = () => {
 }
 
 export default Header
+// ...existing code...

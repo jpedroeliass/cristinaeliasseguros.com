@@ -68,7 +68,7 @@ const PortoProductPage = ({
     <div className="bg-background pt-32">
       {/* Banner promocional para seguro viagem */}
       {showPromo && (
-        <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white">
+        <div className="bg-gradient-to-r from-secondary to-secondary text-white">
           <div className="container-custom py-4">
             <div className="flex flex-col md:flex-row items-center justify-center text-center space-y-3 md:space-y-0">
               <div className="flex items-center space-x-3">
@@ -79,7 +79,7 @@ const PortoProductPage = ({
                 </div>
               </div>
               <div className="md:ml-6 flex flex-col items-center">
-                <span className="bg-yellow-400 text-blue-900 font-bold text-xl tracking-wider px-4 py-2 rounded-md border-2 border-yellow-300">
+                <span className="bg-yellow-400 text-red-900 font-bold text-xl tracking-wider px-4 py-2 rounded-md border-2 border-yellow-300">
                   FERIAS40
                 </span>
                 <span className="text-xs text-yellow-200 mt-1">*40% OFF + 5% com Cartão Porto Bank</span>
@@ -92,7 +92,7 @@ const PortoProductPage = ({
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/80 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-900/90 to-red-700/80 z-10"></div>
           <img 
             src={heroImage} 
             alt={title} 
@@ -120,7 +120,7 @@ const PortoProductPage = ({
             <Button 
               asChild
               size="lg"
-              className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold px-8 py-4 text-lg"
+              className="bg-yellow-400 text-red-900 hover:bg-yellow-300 font-bold px-8 py-4 text-lg"
             >
               <a href={affiliateLink} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-6 h-6 mr-3" />
@@ -225,7 +225,7 @@ const PortoProductPage = ({
             ].map((step, index) => (
               <motion.div key={step.step} variants={itemVariants}>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                  <div className="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
                     {step.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-4">{step.title}</h3>
@@ -238,7 +238,7 @@ const PortoProductPage = ({
       </section>
 
       {/* Por que Porto Seguro */}
-      <section className="section-padding bg-blue-600 text-white">
+      <section className="section-padding bg-red-800 text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -372,7 +372,7 @@ const PortoProductPage = ({
               <Button 
                 asChild
                 size="lg"
-                className="bg-yellow-400 text-blue-900 hover:bg-yellow-300 font-bold px-8 py-4 text-lg"
+                className="bg-yellow-400 text-red-1000 hover:bg-yellow-300 font-bold px-8 py-4 text-lg"
               >
                 <a href={affiliateLink} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-6 h-6 mr-3" />

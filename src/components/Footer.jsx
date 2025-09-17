@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react'
 
@@ -5,13 +6,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-secondary text-white">
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo e Descrição */}
           <div className="lg:col-span-1">
             <img 
-              src="https://i.imgur.com/HvuS7MA.png" 
+              src="https://i.imgur.com/xcqyNHI.png" 
               alt="Cristina Elias Corretora de Seguros" 
               className="h-16 w-auto mb-4 brightness-0 invert"
             />
@@ -149,7 +150,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                <div className="break-words"> {/* <-- CORREÇÃO APLICADA AQUI */}
+                <div className="break-words">
                   <a 
                     href="mailto:cristina@cristinaeliasseguros.com.br" 
                     className="text-gray-300 hover:text-white transition-colors duration-200 text-sm"
@@ -199,3 +200,4 @@ const Footer = () => {
 }
 
 export default Footer
+// ...existing code...

@@ -49,13 +49,13 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0.1 240); /* Azul escuro da marca */
+  --primary: #c7151f; /* Cor primária atualizada */
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.2817 0.0437 270.49); /* Cor secundária atualizada */
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.8 0.15 85); /* Dourado da marca */
+  --accent: #ffffff; /* Dourado da marca */
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
@@ -95,14 +95,14 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-1: #c7151f(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: #c7151f;
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
@@ -126,7 +126,7 @@
 
 @layer components {
   .hero-gradient {
-    background: linear-gradient(135deg, #0D253F 0%, #1e3a8a 50%, #3b82f6 100%);
+    background: linear-gradient(135deg, #21283f 0%, #c7151f 50%, #c7151f 100%);
   }
   
   .card-hover {
@@ -138,11 +138,11 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#c7151f] to-[#c7151f] bg-clip-text text-transparent;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-blue-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-[#c7151f] to-[#c7151f] hover:from-[#c7151f] hover:to-[#c7151f] text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
   }
   
   .section-padding {
@@ -216,4 +216,3 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
-

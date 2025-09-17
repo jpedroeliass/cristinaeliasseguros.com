@@ -107,7 +107,7 @@ const InsurancePage = ({
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-red-900/90 to-red-700/70 z-10"></div> 
           <img 
             src={heroImage} 
             alt={title} 

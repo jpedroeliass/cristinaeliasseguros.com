@@ -308,7 +308,7 @@ const HomePage = () => {
       </section>
 
       {/* Produtos Porto */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary to-primary text-white"> 
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -344,7 +344,7 @@ const HomePage = () => {
                     <div className="text-4xl mb-4">{product.icon}</div>
                     <h3 className="text-xl font-bold mb-3 text-gray-800">{product.title}</h3>
                     <p className="text-gray-600 mb-6 text-sm leading-relaxed">{product.description}</p>
-                    <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700 transition-colors">
+                    <div className="flex items-center text-redS-600 font-semibold group-hover:text-red-700 transition-colors">
                       Saber Mais 
                       <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -397,7 +397,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="section-padding bg-gradient-to-r from-primary to-blue-800 text-white">
+      <section className="section-padding bg-gradient-to-r from-secondary to-primary text-white">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -462,22 +462,20 @@ function CarouselTestimonials({ testimonials }) {
         key={page}
       >
         {current.map((testimonial) => (
-          <Card key={testimonial.name} className="h-full">
-            <CardContent className="p-8">
+          <Card key={testimonial.name} className="h-full flex flex-col justify-between">
+            <CardContent className="p-8 flex flex-col h-full">
               <Quote className="w-8 h-8 text-gray-300 mb-4" />
-              <p className="text-gray-600 mb-6 leading-relaxed">"{testimonial.text}"</p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-primary text-xl">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-800">{testimonial.name}</p>
-                    <div className="flex space-x-1">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
+              <p className="text-gray-600 mb-6 leading-relaxed flex-1">"{testimonial.text}"</p>
+              <div className="flex items-center mt-4">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-primary text-xl mr-3">
+                  {testimonial.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-bold text-gray-800 leading-tight">{testimonial.name}</p>
+                  <div className="flex space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
                   </div>
                 </div>
               </div>
